@@ -4,9 +4,10 @@ import { FormsModule } from "@angular/forms";
 
 import { ModelModule } from "../model/model.module";
 import { StoreComponent } from "./store.component";
+import { CounterDirective } from "./counter.directive";
 @NgModule({
  imports: [ModelModule, CommonModule, FormsModule],
- declarations: [StoreComponent],
+ declarations: [StoreComponent, CounterDirective],
  exports: [StoreComponent]
 })
 export class StoreModule { }

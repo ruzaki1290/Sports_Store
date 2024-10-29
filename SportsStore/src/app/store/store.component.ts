@@ -20,6 +20,8 @@ get categories(): string[] {
     return this.repository.getCategories();
   }
   changeCategory(newCategory?: string) {
+    this.productsPerPage = 4;
+    this.selectedPage = 1;
     this.selectedCategory = newCategory;
   }
   changePage(newPage: number) {
