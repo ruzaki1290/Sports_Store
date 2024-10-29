@@ -20,8 +20,8 @@ get categories(): string[] {
     return this.repository.getCategories();
   }
   changeCategory(newCategory?: string) {
-    this.productsPerPage = 4;
-    this.selectedPage = 1;
+    this.productsPerPage = 4; // added a page reset for user friendliness
+    this.selectedPage = 1; // added a page reset for user friendliness
     this.selectedCategory = newCategory;
   }
   changePage(newPage: number) {
@@ -31,9 +31,14 @@ get categories(): string[] {
     this.productsPerPage = Number(newSize);
     this.changePage(1);
   }
-  get pageNumbers(): number[] {
-    return Array(Math.ceil(this.repository
-    .getProducts(this.selectedCategory).length / this.productsPerPage))
-    .fill(0).map((x, i) => i + 1);
-  }
+  // get pageNumbers(): number[] {
+  //   return Array(Math.ceil(this.repository
+  //   .getProducts(this.selectedCategory).length / this.productsPerPage))
+  //   .fill(0).map((x, i) => i + 1);
+  // }
+
+  get pageCount(): number {
+    return Math.ceil(this.repository
+    .getProducts(this.selectedCategory).length / this.productsPerPage)
+    }
 }
