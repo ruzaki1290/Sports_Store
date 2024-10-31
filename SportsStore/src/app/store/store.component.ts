@@ -52,4 +52,8 @@ get categories(): string[] {
       this.cart.addLine(product);
       this.router.navigateByUrl("/cart");
       }
+
+      navigateToCheckout() {
+        this.router.navigateByUrl("/checkout");
+      }
 }
